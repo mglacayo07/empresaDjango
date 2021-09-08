@@ -8,7 +8,8 @@
 	<ul>
 	{% for d in lista_departamentos %}
 		<li>
-		    <a href="/appEmpresaDjango/departamento/{{ d.id }}">{{ d.nombre}}</a>
+		    <!-- <a href="/appEmpresaDjango/departamento/{{ d.id }}">{{ d.nombre}}</a> -->
+		    <a href="{% url 'index' d.id %}">{{ d.nombre}}</a>
 		</li>
 	{% endfor %}
 	</ul>

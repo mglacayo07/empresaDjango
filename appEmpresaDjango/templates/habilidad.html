@@ -12,7 +12,10 @@
 	{% if empleados %}
 		<ol>
 		{% for e in empleados %}
-			<li><a href="/appEmpresaDjango/empleado/{{ e.id }}">{{ e.nombre}}</a></li>
+			<li>
+                <!-- <a href="/appEmpresaDjango/empleado/{{ e.id }}">{{ e.nombre}}</a> -->
+                <a href="{% url 'habilidad' e.id %}">{{ e.nombre}}</a>
+            </li>
 		{% endfor %}
 		</ol>
 	{% else %}

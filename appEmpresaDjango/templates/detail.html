@@ -14,7 +14,8 @@
             {{ departamento.telefono}}
         </li>
         <li>
-            <a href="/appEmpresaDjango/departamento/{{ departamento.id }}/empleados">Ver empleados</a>
+            <!-- <a href="/appEmpresaDjango/departamento/{{ departamento.id }}/empleados">Ver empleados</a> -->
+            <a href="{% url 'empleados' departamento.id %}">Ver empleados</a>
         </li>
     </ul>
 {% else %}

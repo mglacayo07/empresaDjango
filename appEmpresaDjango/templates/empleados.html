@@ -9,7 +9,10 @@
 	<ul>
 	{% for e in empleados %}
 		<li>
+		    <!--
 		    <a href="/appEmpresaDjango/empleado/{{ e.id }}">{{ e.nombre}}</a>
+		    -->
+            <a href="{% url 'empleados' e.id %}">{{ e.nombre }}</a>
 		</li>
 	{% endfor %}
 	</ul>
