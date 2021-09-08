@@ -3,6 +3,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import get_object_or_404, get_list_or_404
 from .models import Departamento, Habilidad, Empleado
 
+
 #devuelve el listado de empresas
 def index(request):
     departamentos = get_list_or_404(Departamento.objects.order_by('nombre'))
@@ -12,6 +13,7 @@ def index(request):
         'lista_departamentos': departamentos
     }
     return render(request,'index.html',context)
+
 
 #devuelve los datos de un departamento
 def detail(request, departamento_id):
@@ -24,6 +26,7 @@ def detail(request, departamento_id):
     }
     return render(request,'detail.html',context)
 
+
 #devuelve los empleados de un departamento
 def empleados(request, departamento_id):
     departamento = Departamento.objects.get(pk=departamento_id)
@@ -34,6 +37,7 @@ def empleados(request, departamento_id):
         'departamento':departamento
     }
     return render(request,'empleados.html',context)
+
 
 #devuelve los detalles de un empleado
 def empleado(request, empleado_id):
@@ -50,6 +54,7 @@ def empleado(request, empleado_id):
     }
     return render(request,'empleado.html',context)
 #devuelve los detalles de una habilidad
+
 
 def habilidad(request,habilidad_id):
     print("ENTRE",habilidad_id)
